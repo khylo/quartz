@@ -1,0 +1,219 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="8300 (generated)" id="1626649259803-1">
+        <createTable tableName="qrtz_blob_triggers">
+            <column name="sched_name" type="VARCHAR(120)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_blob_triggers_pkey"/>
+            </column>
+            <column name="trigger_name" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_blob_triggers_pkey"/>
+            </column>
+            <column name="trigger_group" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_blob_triggers_pkey"/>
+            </column>
+            <column name="blob_data" type="BYTEA"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-2">
+        <createTable tableName="qrtz_triggers">
+            <column name="sched_name" type="VARCHAR(120)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_triggers_pkey"/>
+            </column>
+            <column name="trigger_name" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_triggers_pkey"/>
+            </column>
+            <column name="trigger_group" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_triggers_pkey"/>
+            </column>
+            <column name="job_name" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="job_group" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(250)"/>
+            <column name="next_fire_time" type="BIGINT"/>
+            <column name="prev_fire_time" type="BIGINT"/>
+            <column name="priority" type="INTEGER"/>
+            <column name="trigger_state" type="VARCHAR(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="trigger_type" type="VARCHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_time" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="end_time" type="BIGINT"/>
+            <column name="calendar_name" type="VARCHAR(200)"/>
+            <column name="misfire_instr" type="SMALLINT"/>
+            <column name="job_data" type="BYTEA"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-3">
+        <createTable tableName="qrtz_cron_triggers">
+            <column name="sched_name" type="VARCHAR(120)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_cron_triggers_pkey"/>
+            </column>
+            <column name="trigger_name" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_cron_triggers_pkey"/>
+            </column>
+            <column name="trigger_group" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_cron_triggers_pkey"/>
+            </column>
+            <column name="cron_expression" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="time_zone_id" type="VARCHAR(80)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-4">
+        <createTable tableName="qrtz_simple_triggers">
+            <column name="sched_name" type="VARCHAR(120)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_simple_triggers_pkey"/>
+            </column>
+            <column name="trigger_name" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_simple_triggers_pkey"/>
+            </column>
+            <column name="trigger_group" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_simple_triggers_pkey"/>
+            </column>
+            <column name="repeat_count" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="repeat_interval" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="times_triggered" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-5">
+        <createTable tableName="qrtz_simprop_triggers">
+            <column name="sched_name" type="VARCHAR(120)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_simprop_triggers_pkey"/>
+            </column>
+            <column name="trigger_name" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_simprop_triggers_pkey"/>
+            </column>
+            <column name="trigger_group" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_simprop_triggers_pkey"/>
+            </column>
+            <column name="str_prop_1" type="VARCHAR(512)"/>
+            <column name="str_prop_2" type="VARCHAR(512)"/>
+            <column name="str_prop_3" type="VARCHAR(512)"/>
+            <column name="int_prop_1" type="INTEGER"/>
+            <column name="int_prop_2" type="INTEGER"/>
+            <column name="long_prop_1" type="BIGINT"/>
+            <column name="long_prop_2" type="BIGINT"/>
+            <column name="dec_prop_1" type="numeric(13, 4)"/>
+            <column name="dec_prop_2" type="numeric(13, 4)"/>
+            <column name="bool_prop_1" type="BOOLEAN"/>
+            <column name="bool_prop_2" type="BOOLEAN"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-6">
+        <createTable tableName="qrtz_job_details">
+            <column name="sched_name" type="VARCHAR(120)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_job_details_pkey"/>
+            </column>
+            <column name="job_name" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_job_details_pkey"/>
+            </column>
+            <column name="job_group" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_job_details_pkey"/>
+            </column>
+            <column name="description" type="VARCHAR(250)"/>
+            <column name="job_class_name" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_durable" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_nonconcurrent" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_update_data" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="requests_recovery" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="job_data" type="BYTEA"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-7">
+        <addForeignKeyConstraint baseColumnNames="sched_name,trigger_name,trigger_group" baseTableName="qrtz_blob_triggers" constraintName="qrtz_blob_triggers_sched_name_trigger_name_trigger_group_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="sched_name,trigger_name,trigger_group" referencedTableName="qrtz_triggers" validate="true"/>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-8">
+        <addForeignKeyConstraint baseColumnNames="sched_name,trigger_name,trigger_group" baseTableName="qrtz_cron_triggers" constraintName="qrtz_cron_triggers_sched_name_trigger_name_trigger_group_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="sched_name,trigger_name,trigger_group" referencedTableName="qrtz_triggers" validate="true"/>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-9">
+        <addForeignKeyConstraint baseColumnNames="sched_name,trigger_name,trigger_group" baseTableName="qrtz_simple_triggers" constraintName="qrtz_simple_triggers_sched_name_trigger_name_trigger_group_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="sched_name,trigger_name,trigger_group" referencedTableName="qrtz_triggers" validate="true"/>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-10">
+        <addForeignKeyConstraint baseColumnNames="sched_name,trigger_name,trigger_group" baseTableName="qrtz_simprop_triggers" constraintName="qrtz_simprop_triggers_sched_name_trigger_name_trigger_grou_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="sched_name,trigger_name,trigger_group" referencedTableName="qrtz_triggers" validate="true"/>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-11">
+        <addForeignKeyConstraint baseColumnNames="sched_name,job_name,job_group" baseTableName="qrtz_triggers" constraintName="qrtz_triggers_sched_name_job_name_job_group_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="sched_name,job_name,job_group" referencedTableName="qrtz_job_details" validate="true"/>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-12">
+        <createTable tableName="qrtz_calendars">
+            <column name="sched_name" type="VARCHAR(120)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_calendars_pkey"/>
+            </column>
+            <column name="calendar_name" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_calendars_pkey"/>
+            </column>
+            <column name="calendar" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-13">
+        <createTable tableName="qrtz_fired_triggers">
+            <column name="sched_name" type="VARCHAR(120)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_fired_triggers_pkey"/>
+            </column>
+            <column name="entry_id" type="VARCHAR(95)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_fired_triggers_pkey"/>
+            </column>
+            <column name="trigger_name" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="trigger_group" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="instance_name" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fired_time" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sched_time" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="priority" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="state" type="VARCHAR(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="job_name" type="VARCHAR(200)"/>
+            <column name="job_group" type="VARCHAR(200)"/>
+            <column name="is_nonconcurrent" type="BOOLEAN"/>
+            <column name="requests_recovery" type="BOOLEAN"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="8300 (generated)" id="1626649259803-14">
+        <createTable tableName="qrtz_paused_trigger_grps">
+            <column name="sched_name" type="VARCHAR(120)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_paused_trigger_grps_pkey"/>
+            </column>
+            <column name="trigger_group" type="VARCHAR(200)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="qrtz_paused_trigger_grps_pkey"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
