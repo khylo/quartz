@@ -1,4 +1,4 @@
-# STeps
+# Steps
 
 - Insert quartz tables into DB (used postgres 13). Note these are taken from quartz\docs\dbTables  folder
 - liquibase generatechangelog --changelog-file changelog.xml
